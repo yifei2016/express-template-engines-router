@@ -1,0 +1,31 @@
+include head
+
+body
+
+  h2 indexpUG
+  p pug text.
+  block userinfo
+    p Ingen info.
+//-När den webbplats vi bygger blir mer komplex kan vi bygga upp sidor genom att pussla ihop flera views. Vi kan ha en för head, en för navigation, en för själva innehållet och en för footer.
+//-Då kan man arbeta med en index-view som plockar in respektive.
+
+
+//-I en view som importerar en annan skriver vi include på den plats där vi vill ha in det. 
+//-När vi bygger ihop på det här viset är det också värdefullt att använda olika block. 
+//-Detta för att andra views ska ha möjlighet att skriva över innehållet.
+
+
+//-(layout.pug)
+//- 		body
+//- 	block navigation
+//-     			include navigation
+//- 		block content    
+//-     			h1 Välkommen
+//- 			p En bra sida
+//- 
+//- (index.pug)
+//- 		extends layout.pug
+//- 
+//- 		block content    
+//-     			h1 Än mer välkommen
+//- 			p En bättre sida
