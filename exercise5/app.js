@@ -18,12 +18,18 @@ var pug = require('pug');
 //     	}
 //   });
   //res.send('hej' + req.method)
-
-  app.use(express.static(__dirname + 'public'));//register middleware
+  //"/Users/wangyifei/Developer/expressExercise/exercise5public"
+  app.use(express.static(__dirname + '/public'));//register middleware
+  //public files to add in, but if no link in html, then that one won be added in,
+  //ex, main.css style.css, only style is added in html, only style.css work
   app.set('view engine', 'pug');//set up   render html  template engine
   app.set('views',__dirname + '/views');
 //get handler
   app.get('/', (req,res)=>{
+    //res.render('index');//render index pug
+    //res.render('/index.html');//it is wrong!!!!!!only render index pug, template engines
+    console.log(__dirname)
+    console.log(__dirname + '/index.html' )
     res.sendFile(__dirname + '/index.html');
   })
 
@@ -65,4 +71,4 @@ app.get('/user',(req,res)=>{
 //dels ett objekt med info som skickas med till sidan. Detta objekt kan som synes innehålla all möjlig data,
 //vi interpolerar ( #{ … } ) ut den på sidan om vi vill skriva ut den direkt.
 
-app.listen(3000);
+app.listen(4000);

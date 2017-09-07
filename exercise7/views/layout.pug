@@ -1,4 +1,11 @@
 
-
-p this is about us page.
-p this is contact page.
+html
+    head
+        title=dfdsf
+        link(rel="stylesheet", href="style.css")
+    body
+      block layout
+        p this is layout page.
+        //- if block has the same indent with p, then p and h5 in index both will be in
+        //- index route, but if p has indent after block layout, then h5 will write over p
+      
